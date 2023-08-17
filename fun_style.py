@@ -60,7 +60,7 @@ tab_selected_style = {
     'color': 'black', 
     'padding': '5px', 
 }
-tipo_poste_colors = {
+tipo_colors = {
         'Bares' : '#FF0000',
         'Centros nocturnos' : '#FF6E00',
     }
