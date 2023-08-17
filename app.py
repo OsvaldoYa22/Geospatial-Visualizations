@@ -302,7 +302,7 @@ def generate_map(selected_location,selected_classification,
         ## Add these columns using the R program "API.r".
         #imagen_url = row['IMAGEN ']  
         #link_url = row['MAPS']  
-        color = tipo_poste_colors.get(especialidad, 'gray')
+        color = tipo_colors.get(especialidad, 'gray')
 
         popup_content = f'<a href="{link_url}" target="_blank">' \
                         f'<img src="{imagen_url}" alt="{especialidad}" width="200" height="150"></a><br>' \
@@ -329,9 +329,9 @@ def generate_map(selected_location,selected_classification,
                 '<table style="width:100%;">' \
                 '<tr><th>Clasificación</th><th>Cantidad </th></tr>'
 
-    for camra_type, count in camras_count.items():
-        color = tipo_poste_colors.get(camra_type, 'gray')
-        legend_html += f'<tr><td><span style="background-color:{color}; padding: 6px; border-radius: 50%; display: inline-block;"></span> {camra_type}</td><td>{count}</td></tr>'
+    for type, count in camras_count.items():
+        color = tipo_colors.get(type, 'gray')
+        legend_html += f'<tr><td><span style="background-color:{color}; padding: 6px; border-radius: 50%; display: inline-block;"></span> {type}</td><td>{count}</td></tr>'
 
     legend_html += '</table></div>'
     m.get_root().html.add_child(folium.Element(legend_html))
